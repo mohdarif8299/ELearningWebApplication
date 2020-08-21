@@ -8,22 +8,31 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="COURSE")
+@Table(name = "COURSE")
 public class Course {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column(name = "COURSE_ID")
 	private Long id;
-	
-	@Column(name="COURSE_NAME")
+
+	@Column(name = "COURSE_NAME")
 	private String courseName;
+
+	@Column(name = "COURSE_IMAGE")
+	private String courseImage;
+
 	
-	@Column(name="VIDEO_URL")
-	private String videoUrl;
-	
-	@Column(name="COURSE_TITLE_ID")
-	private String courseId;
+	@Column(name = "username")
+	private String username;
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
+	}
 
 	public Long getId() {
 		return id;
@@ -41,22 +50,11 @@ public class Course {
 		this.courseName = courseName;
 	}
 
-	public String getVideoUrl() {
-		return videoUrl;
+	public String getCourseImage() {
+		return courseImage;
 	}
 
-	public void setVideoUrl(String videoUrl) {
-		this.videoUrl = videoUrl;
+	public void setCourseImage(String courseImage) {
+		this.courseImage = courseImage;
 	}
-
-	public String getCourseId() {
-		return courseId;
-	}
-
-	public void setCourseId(String courseId) {
-		this.courseId = courseId;
-	}
-	
-	
-	
 }
